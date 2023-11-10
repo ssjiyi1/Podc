@@ -1,0 +1,31 @@
+# permissions for end users to edit podcs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: podc-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: podc
+    app.kubernetes.io/part-of: podc
+    app.kubernetes.io/managed-by: kustomize
+  name: podc-editor-role
+rules:
+- apiGroups:
+  - zw.zw.com
+  resources:
+  - podcs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - zw.zw.com
+  resources:
+  - podcs/status
+  verbs:
+  - get

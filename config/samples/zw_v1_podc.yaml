@@ -1,0 +1,12 @@
+apiVersion: zw.zw.com/v1
+kind: Podc
+metadata:
+  labels:
+    app.kubernetes.io/name: podc
+    app.kubernetes.io/instance: podc-sample
+    app.kubernetes.io/part-of: podc
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: podc
+  name: podc-sample
+spec:
+  # TODO(user): Add fields here
